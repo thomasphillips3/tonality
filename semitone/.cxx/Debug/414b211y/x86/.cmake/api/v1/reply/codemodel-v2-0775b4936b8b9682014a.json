@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "lib/oboe",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.oboe-Debug-39d6e4d29b1bf759646a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "lib/oboe",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "semitone",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "oboe",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "oboe::@8f4743253e0bf96dcd55",
+					"jsonFile" : "target-oboe-Debug-12dbabc9721dc397274b.json",
+					"name" : "oboe",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "semitone-native::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-semitone-native-Debug-cce64c7c43bd8308ba95.json",
+					"name" : "semitone-native",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/414b211y/x86",
+		"source" : "/Users/thomasphillips/workspace/android/tonality/semitone"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

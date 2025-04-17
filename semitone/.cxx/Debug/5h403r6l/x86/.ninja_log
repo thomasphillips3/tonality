@@ -1,0 +1,27 @@
+# ninja log v5
+3	1247	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o	1bc5b1d21049d32d
+638	795	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o	fc8ffc47c3242145
+995	1586	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o	7865a51b60cbefaf
+961	1611	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o	6d6c39c507c580a3
+893	1606	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o	27d3db14784f0600
+1	755	1744871902	CMakeFiles/semitone-native.dir/src/main/cpp/Tone.cpp.o	1ba8ab2f5835665e
+472	638	1744871901	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o	b7443b6b9f8aee1
+715	893	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o	fc79f66a620f8b69
+2	995	1744871902	CMakeFiles/semitone-native.dir/src/main/cpp/Sound.cpp.o	5f2044705b985f90
+4	781	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o	27a2a46ffbba2431
+795	1590	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o	128a8daf995d944d
+781	1605	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o	469c6af511ce0df
+12	1562	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o	146edd6a2b2e4507
+274	472	1744871901	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o	16f74ce58653ed3a
+1	961	1744871902	CMakeFiles/semitone-native.dir/src/main/cpp/PianoEngine.cpp.o	1a28b6aa9bcf8ed1
+755	1606	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o	ef1598dea1c70845
+1762	1957	1744871903	../../../../build/intermediates/cxx/Debug/5h403r6l/obj/x86/libsemitone-native.so	d2f8fc0b063fb713
+10	874	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o	3386ebcfa8592347
+2	274	1744871901	lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AAudioLoader.cpp.o	456e2d162f6e1ef6
+908	1530	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o	f8bb5c805293aebf
+1630	1762	1744871903	lib/oboe/liboboe.a	395dac156dc9baf9
+1	908	1744871902	CMakeFiles/semitone-native.dir/src/main/cpp/semitone-native.cpp.o	156f46334acaf63d
+10	715	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o	9996a10613e167c0
+1248	1412	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/common/Trace.cpp.o	88d2f8beafd557ee
+875	1630	1744871902	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o	c966c5bc5f311f9f
+0	34	0	clean	a1dd9a84ececaf2d

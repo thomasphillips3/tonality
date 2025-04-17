@@ -1,0 +1,6 @@
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/CMakeFiles/semitone-native.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/lib/oboe/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/lib/oboe/CMakeFiles/edit_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a/lib/oboe/CMakeFiles/oboe.dir

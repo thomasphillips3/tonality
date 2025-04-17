@@ -1,0 +1,6 @@
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/CMakeFiles/edit_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/CMakeFiles/semitone-native.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/lib/oboe/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/lib/oboe/CMakeFiles/edit_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/2sa625q4/x86/lib/oboe/CMakeFiles/oboe.dir
