@@ -5,10 +5,10 @@ import android.content.SharedPreferences
 import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Paint
-import android.preference.PreferenceManager
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import mn.tck.semitone.PianoView
 import mn.tck.semitone.Util
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
@@ -34,7 +34,7 @@ class TonalityPianoView @JvmOverloads constructor(
         const val PREF_SCALE_DEFAULT = 0
         const val PREF_SCALE_ROOT_DEFAULT = 0
         const val PREF_LABEL_INTERVALS_DEFAULT = true
-        const val PREF_ROWS_TOP_DOWN_DEFAULT = true // true = lower notes on top, false = lower notes on bottom
+        const val PREF_ROWS_TOP_DOWN_DEFAULT = true
         val PREF_THEME_DEFAULT = THEME.STANDARD
     }
 
@@ -53,7 +53,10 @@ class TonalityPianoView @JvmOverloads constructor(
     var theme: THEME = THEME.STANDARD
         private set
     var paused: Boolean = false
-        private set
+        set(value) {
+            field = value
+            invalidate()
+        }
 
     // Local Float versions for drawing
     private var whiteWidthF: Float = 0f
@@ -61,47 +64,49 @@ class TonalityPianoView @JvmOverloads constructor(
     private var blackWidthF: Float = 0f
     private var blackHeightF: Float = 0f
 
-    private val nameBlackPaint = Paint()
+    private val nameBlackPaint = Paint().apply {
+        color = ContextCompat.getColor(context, R.color.black)
+        textAlign = Paint.Align.CENTER
+    }
     private val whiteScalePaint = Paint()
     private val blackScalePaint = Paint()
     private val whiteScalePaintRoot = Paint()
     private val blackScalePaintRoot = Paint()
     private val intervalWhitePaint = Paint()
     private val intervalBlackPaint = Paint()
-    private var scaleColors: Array<Paint>? = null
+    private var scaleColors: Array<Paint> = Array(12) { whitePaint }
 
-    private lateinit var intervalNames: Array<String>
-    private lateinit var noteNames: Array<String>
+    private val intervalNames: Array<String>
+    private val noteNames: Array<String>
+    private val preferences: SharedPreferences
 
     init {
+        preferences = PreferenceManager.getDefaultSharedPreferences(context)
+        intervalNames = resources.getStringArray(R.array.intervalNames)
+        noteNames = resources.getStringArray(R.array.noteNames)
+
         // get orientation based configuration values for keyboard dimensions
         val orientation = getOrientationString()
-        val sp = PreferenceManager.getDefaultSharedPreferences(context)
-        rows = sp.getInt("piano_rows$orientation", 2)
-        keys = sp.getInt("piano_keys$orientation", 7)
-        pitch = sp.getInt("piano_pitch$orientation", 28)
+        rows = preferences.getInt("piano_rows$orientation", 2)
+        keys = preferences.getInt("piano_keys$orientation", 7)
+        pitch = preferences.getInt("piano_pitch$orientation", 28)
 
         // setup colors
-        theme = THEME.valueOf(sp.getString(PREF_THEME, PREF_THEME_DEFAULT.name)!!)
+        theme = THEME.valueOf(preferences.getString(PREF_THEME, PREF_THEME_DEFAULT.name) ?: PREF_THEME_DEFAULT.name)
         setupColors()
 
         // initialize from preferences
-        setScale(sp.getInt(PREF_SCALE, PREF_SCALE_DEFAULT), sp.getInt(PREF_SCALE_ROOT, PREF_SCALE_ROOT_DEFAULT))
-        sustain = sp.getBoolean("sustain", false)
-        labelnotes = sp.getBoolean("labelnotes", true)
-        labelc = sp.getBoolean("labelc", true)
-        labelIntervals = sp.getBoolean(PREF_LABEL_INTERVALS, PREF_LABEL_INTERVALS_DEFAULT)
-        rowsTopDown = sp.getBoolean(PREF_ROWS_TOP_DOWN, PREF_ROWS_TOP_DOWN_DEFAULT)
-        concert_a = 440 // set a default to avoid DIV0 errors
-        try {
-            concert_a = sp.getString("concert_a", "440")?.toInt() ?: 440
+        setScale(preferences.getInt(PREF_SCALE, PREF_SCALE_DEFAULT), preferences.getInt(PREF_SCALE_ROOT, PREF_SCALE_ROOT_DEFAULT))
+        sustain = preferences.getBoolean("sustain", false)
+        labelnotes = preferences.getBoolean("labelnotes", true)
+        labelc = preferences.getBoolean("labelc", true)
+        labelIntervals = preferences.getBoolean(PREF_LABEL_INTERVALS, PREF_LABEL_INTERVALS_DEFAULT)
+        rowsTopDown = preferences.getBoolean(PREF_ROWS_TOP_DOWN, PREF_ROWS_TOP_DOWN_DEFAULT)
+        concert_a = try {
+            preferences.getString("concert_a", "440")?.toInt() ?: 440
         } catch (e: NumberFormatException) {
-            concert_a = 440
+            440
         }
-
-        // get interval and note names for labelling
-        intervalNames = resources.getStringArray(R.array.intervalNames)
-        noteNames = resources.getStringArray(R.array.noteNames)
 
         // finally set internal arrays and stuff according to configuration values
         updateParams(false)
@@ -197,18 +202,8 @@ class TonalityPianoView @JvmOverloads constructor(
             ta.recycle()
         } else {
             // set default colors if no scale is selected
-            scaleColors = arrayOf(
-                whitePaint, blackPaint, whitePaint, blackPaint, whitePaint, whitePaint,
-                blackPaint, whitePaint, blackPaint, whitePaint, blackPaint, whitePaint
-            )
+            scaleColors = Array(12) { whitePaint }
         }
-
-        // store in preferences
-        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-        editor.putInt(PREF_SCALE, scale)
-        editor.putInt(PREF_SCALE_ROOT, rootNote)
-        editor.apply()
-
         invalidate()
     }
 
@@ -343,8 +338,8 @@ class TonalityPianoView @JvmOverloads constructor(
         updateParams(true)
     }
 
-    fun octaveLeft(v: View) {
-        pitch -= 12
+    fun octaveLeft(@Suppress("UNUSED_PARAMETER") v: View) {
+        pitch = (pitch - keys).coerceAtLeast(0)
         updateParams(true)
     }
 
@@ -358,8 +353,8 @@ class TonalityPianoView @JvmOverloads constructor(
         updateParams(true)
     }
 
-    fun octaveRight(v: View) {
-        pitch += 12
+    fun octaveRight(@Suppress("UNUSED_PARAMETER") v: View) {
+        pitch = (pitch + keys).coerceAtMost(128 - rows * keys)
         updateParams(true)
     }
 
@@ -372,33 +367,25 @@ class TonalityPianoView @JvmOverloads constructor(
 
     fun toggleLabelNotes() {
         labelnotes = !labelnotes
-        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-        editor.putBoolean("labelnotes", labelnotes)
-        editor.apply()
+        preferences.edit().putBoolean("labelnotes", labelnotes).apply()
         invalidate()
     }
 
     fun toggleLabelC() {
         labelc = !labelc
-        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-        editor.putBoolean("labelc", labelc)
-        editor.apply()
+        preferences.edit().putBoolean("labelc", labelc).apply()
         invalidate()
     }
 
     fun toggleLabelIntervals() {
         labelIntervals = !labelIntervals
-        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-        editor.putBoolean(PREF_LABEL_INTERVALS, labelIntervals)
-        editor.apply()
+        preferences.edit().putBoolean(PREF_LABEL_INTERVALS, labelIntervals).apply()
         invalidate()
     }
 
     fun toggleRowsTopDown() {
         rowsTopDown = !rowsTopDown
-        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
-        editor.putBoolean(PREF_ROWS_TOP_DOWN, rowsTopDown)
-        editor.apply()
+        preferences.edit().putBoolean(PREF_ROWS_TOP_DOWN, rowsTopDown).apply()
         invalidate()
     }
 

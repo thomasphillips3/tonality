@@ -13,6 +13,9 @@ import android.widget.PopupWindow
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
 import mn.tck.semitone.PianoEngine
 import net.currit.tonality.databinding.ActivityTonalityMainBinding
@@ -20,27 +23,26 @@ import net.currit.tonality.databinding.PopupSizingBinding
 
 class TonalityMainActivity : AppCompatActivity() {
     private var scaleController: PianoControlScale? = null
+    private lateinit var activityBinding: ActivityTonalityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tonality_main)
-
-        val activityBinding = DataBindingUtil.inflate<ActivityTonalityMainBinding>(
+        
+        activityBinding = DataBindingUtil.inflate(
             layoutInflater, R.layout.activity_tonality_main, null, false
         )
         activityBinding.pianoView = activityBinding.piano
-
         setContentView(activityBinding.root)
 
         PianoEngine.create(this)
 
         // setup scale UI elements
         if (savedInstanceState == null) {
-            val scaleController = PianoControlScale()
+            scaleController = PianoControlScale()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.piano_control_scale_container, scaleController)
+                .replace(R.id.piano_control_scale_container, scaleController!!)
                 .commit()
-            scaleController.setPiano(activityBinding.piano)
+            scaleController?.setPiano(activityBinding.piano)
         } else {
             scaleController = supportFragmentManager.findFragmentById(R.id.piano_control_scale_container) as? PianoControlScale
             scaleController?.setPiano(activityBinding.piano)
@@ -65,7 +67,6 @@ class TonalityMainActivity : AppCompatActivity() {
             if (popup.isShowing)
                 popup.dismiss()
             else
-                // TODO: 2019-05-27 close with back
                 popup.showAtLocation(sizingButton, Gravity.CENTER, 0, 0)
         }
 
@@ -74,7 +75,6 @@ class TonalityMainActivity : AppCompatActivity() {
         moreButton.setOnClickListener {
             val popupMenu = PopupMenu(this, moreButton)
             popupMenu.inflate(R.menu.tonality_menu)
-            // TODO: 2019-05-28 divider do not show ...
             MenuCompat.setGroupDividerEnabled(popupMenu.menu, true)
 
             // enable/disable menu entries
@@ -87,7 +87,6 @@ class TonalityMainActivity : AppCompatActivity() {
             m.findItem(R.id.menu_switch_circleoffifths).isChecked = scaleController?.isUseCircleOfFifthSelector() ?: false
             m.findItem(R.id.menu_switch_labelintervals).isChecked = activityBinding.piano.isLabelIntervals()
             m.findItem(R.id.menu_switch_rows_top_down).isChecked = activityBinding.piano.getRowsTopDown()
-//            m.findItem(R.id.menu_theme_less).isChecked = activityBinding.piano.theme == TonalityPianoView.THEME.LESS_COLORS
 
             popupMenu.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
@@ -123,10 +122,10 @@ class TonalityMainActivity : AppCompatActivity() {
 
         // Hide UI
         supportActionBar?.hide()
-        window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN) // hide notification bar
-
-        if (!activityBinding.piano.isPaused()) {
-            // ... existing code ...
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowInsetsControllerCompat(window, window.decorView).let { controller ->
+            controller.hide(WindowInsetsCompat.Type.systemBars())
+            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
     }
 
