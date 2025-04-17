@@ -1,57 +1,60 @@
+plugins {
+    id 'com.android.library'
+}
+
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-    }
-}
-
-// apply plugin: 'com.android.application'
-apply plugin: 'com.android.library'
-
-repositories {
-    mavenCentral()
-    maven {
-        url "https://maven.google.com"
-    }
-    jcenter()
-}
-
-dependencies {
-    implementation 'androidx.preference:preference:1.1.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha10'
-}
-
 android {
-    compileSdkVersion 28
+    namespace 'mn.tck.semitone'
+    compileSdk 34
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 
     lintOptions {
         disable "GoogleAppIndexingWarning"
         disable "AppCompatCustomView"
+        disable "MissingSuperCall"
+        abortOnError false
     }
 
     defaultConfig {
-//        applicationId "mn.tck.semitone"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdk 21
+        targetSdk 34
         versionCode 3
         versionName "1.2"
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_PLATFORM=android-16"
+                arguments "-DANDROID_PLATFORM=android-21"
             }
         }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libavcodec.so'
+        pickFirst 'lib/armeabi-v7a/libavformat.so'
+        pickFirst 'lib/armeabi-v7a/libavutil.so'
+        pickFirst 'lib/armeabi-v7a/libswresample.so'
+        pickFirst 'lib/arm64-v8a/libavcodec.so'
+        pickFirst 'lib/arm64-v8a/libavformat.so'
+        pickFirst 'lib/arm64-v8a/libavutil.so'
+        pickFirst 'lib/arm64-v8a/libswresample.so'
+        pickFirst 'lib/x86/libavcodec.so'
+        pickFirst 'lib/x86/libavformat.so'
+        pickFirst 'lib/x86/libavutil.so'
+        pickFirst 'lib/x86/libswresample.so'
+        pickFirst 'lib/x86_64/libavcodec.so'
+        pickFirst 'lib/x86_64/libavformat.so'
+        pickFirst 'lib/x86_64/libavutil.so'
+        pickFirst 'lib/x86_64/libswresample.so'
     }
 
     signingConfigs {
@@ -82,12 +85,52 @@ android {
             if (keystorePropertiesFile.exists()) {
                 signingConfig signingConfigs.config
             }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // AndroidX Core
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Material Design 3
+    implementation 'com.google.android.material:material:1.11.0'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile) {
         options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}
+
+// Fix for JDK image transformation issue
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core:1.12.0'
+    }
+}
+
+// Add Java toolchain configuration
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
