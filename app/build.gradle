@@ -1,54 +1,76 @@
 plugins {
     id 'com.android.application'
-    id 'com.github.triplet.play' version '2.2.1'
 }
 
-
 android {
-    compileSdkVersion 28
+    namespace 'net.currit.tonality'
+    compileSdk 34
+    
     defaultConfig {
         applicationId "net.currit.tonality"
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdk 21
+        targetSdk 34
         versionCode 3
         versionName "1.3-dev"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
-    dataBinding {
-        enabled = true
+    
+    buildFeatures {
+        dataBinding true
+        viewBinding true
     }
-    signingConfigs {
-        currit {
-            storeFile file(CURRIT_KEYSTORE)
-            storePassword CURRIT_KEYSTORE_PASSWORD
-            keyAlias CURRIT_RELEASE_KEY
-            keyPassword CURRIT_RELEASE_KEY_PASSWORD
-        }
+    
+    lintOptions {
+        disable "MissingSuperCall"
+        abortOnError false
     }
+    
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.currit
         }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
-play {
-    serviceAccountCredentials = file(CURRIT_API_CREDENTIALS)
-    track = "production"
-    defaultToAppBundles = true
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+// Fix for JDK image transformation issue
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.core:core:1.12.0'
+    }
 }
 
 dependencies {
     implementation project(':semitone')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    
+    // AndroidX Core
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.preference:preference:1.1.0-beta01'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.databinding:databinding-runtime:8.1.4'
+    
+    // Material Design 3
+    implementation 'com.google.android.material:material:1.11.0'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

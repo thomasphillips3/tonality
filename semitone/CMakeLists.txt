@@ -1,5 +1,7 @@
 cmake_minimum_required (VERSION 3.4.1)
 
+project(semitone)
+
 add_library (semitone-native SHARED
     src/main/cpp/semitone-native.cpp
     src/main/cpp/PianoEngine.cpp

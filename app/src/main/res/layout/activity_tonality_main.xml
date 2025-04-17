@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="piano"
+            name="pianoView"
             type="net.currit.tonality.TonalityPianoView" />
     </data>
 
@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:elevation="@dimen/image_button_elevation"
                 android:backgroundTint="@color/colorPrimary"
-                android:onClick="@{piano::octaveLeft}"
+                android:onClick="@{pianoView::octaveLeft}"
                 android:src="@drawable/icon_backward" />
 
             <ImageButton
@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:elevation="@dimen/image_button_elevation"
                 android:backgroundTint="@color/colorPrimary"
-                android:onClick="@{piano::octaveRight}"
+                android:onClick="@{pianoView::octaveRight}"
                 android:src="@drawable/icon_forward" />
 
             <Space

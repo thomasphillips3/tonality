@@ -28,7 +28,7 @@ public class TonalityMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         final ActivityTonalityMainBinding activityBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.activity_tonality_main, null, false);
-        activityBinding.setPiano(activityBinding.piano);
+        activityBinding.setPianoView(activityBinding.piano);
 
         setContentView(activityBinding.getRoot());
 
@@ -82,31 +82,27 @@ public class TonalityMainActivity extends AppCompatActivity {
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        switch (menuItem.getItemId()) {
-                            case R.id.menu_about:
-                                startActivity(new Intent(getApplicationContext(), AboutTonalityActivity.class));
-                                return true;
-                            case R.id.menu_switch_labelnotes:
-                                activityBinding.piano.toggleLabelNotes();
-                                return true;
-                            case R.id.menu_switch_labelc:
-                                activityBinding.piano.toggleLabelC();
-                                return true;
-                            case R.id.menu_switch_labelintervals:
-                                activityBinding.piano.toggleLabelIntervals();
-                                return true;
-                            case R.id.menu_switch_rows_top_down:
-                                activityBinding.piano.toggleRowsTopDown();
-                                return true;
-//                            case R.id.menu_theme_less:
-//                                activityBinding.piano.toggleTheme();
-//                                return  true;
-                            case R.id.menu_switch_circleoffifths:
-                                scaleController.toggleCircleOfFifthsSelector();
-                                return true;
-                            default:
-                                return false;
+                        int id = menuItem.getItemId();
+                        if (id == R.id.menu_about) {
+                            startActivity(new Intent(getApplicationContext(), AboutTonalityActivity.class));
+                            return true;
+                        } else if (id == R.id.menu_switch_labelnotes) {
+                            activityBinding.piano.toggleLabelNotes();
+                            return true;
+                        } else if (id == R.id.menu_switch_labelc) {
+                            activityBinding.piano.toggleLabelC();
+                            return true;
+                        } else if (id == R.id.menu_switch_labelintervals) {
+                            activityBinding.piano.toggleLabelIntervals();
+                            return true;
+                        } else if (id == R.id.menu_switch_rows_top_down) {
+                            activityBinding.piano.toggleRowsTopDown();
+                            return true;
+                        } else if (id == R.id.menu_switch_circleoffifths) {
+                            scaleController.toggleCircleOfFifthsSelector();
+                            return true;
                         }
+                        return false;
                     }
                 });
                 popupMenu.show();

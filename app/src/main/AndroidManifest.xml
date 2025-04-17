@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="net.currit.tonality">
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- Disable permission from semitone -->
     <uses-permission
         android:name="android.permission.RECORD_AUDIO"
         tools:node="remove" />
 
     <application
+        android:name=".TonalityApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,9 +16,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:node="replace">
-        <activity android:name=".AboutTonalityActivity" />
+        <activity 
+            android:name=".AboutTonalityActivity"
+            android:exported="false" />
         <activity
             android:name=".TonalityMainActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
