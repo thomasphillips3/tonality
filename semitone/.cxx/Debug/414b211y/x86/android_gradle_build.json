@@ -1,0 +1,50 @@
+{
+  "buildFiles": [
+    "/Users/thomasphillips/workspace/android/tonality/semitone/CMakeLists.txt",
+    "/Users/thomasphillips/workspace/android/tonality/semitone/lib/oboe/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/thomasphillips/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/414b211y/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/thomasphillips/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/414b211y/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "oboe::@8f4743253e0bf96dcd55": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "oboe",
+      "output": "/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/414b211y/x86/lib/oboe/liboboe.a"
+    },
+    "semitone-native::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "semitone-native",
+      "output": "/Users/thomasphillips/workspace/android/tonality/semitone/build/intermediates/cxx/Debug/414b211y/obj/x86/libsemitone-native.so",
+      "runtimeFiles": [
+        "/Users/thomasphillips/workspace/android/tonality/semitone/lib/ffmpeg/build/x86/lib/libavcodec.so",
+        "/Users/thomasphillips/workspace/android/tonality/semitone/lib/ffmpeg/build/x86/lib/libavformat.so",
+        "/Users/thomasphillips/workspace/android/tonality/semitone/lib/ffmpeg/build/x86/lib/libavutil.so",
+        "/Users/thomasphillips/workspace/android/tonality/semitone/lib/ffmpeg/build/x86/lib/libswresample.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/thomasphillips/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/thomasphillips/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

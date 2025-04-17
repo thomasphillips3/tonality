@@ -1,0 +1,2 @@
+/Users/thomasphillips/workspace/android/tonality/semitone/CMakeLists.txt
+/Users/thomasphillips/workspace/android/tonality/semitone/lib/oboe/CMakeLists.txt

@@ -1,0 +1,26 @@
+ninja: Entering directory `/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/Debug/5h403r6l/armeabi-v7a'
+[1/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AAudioLoader.cpp.o
+[2/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o
+[3/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o
+[4/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o
+[5/25] Building CXX object CMakeFiles/semitone-native.dir/src/main/cpp/semitone-native.cpp.o
+[6/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o
+[7/25] Building CXX object CMakeFiles/semitone-native.dir/src/main/cpp/Tone.cpp.o
+[8/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o
+[9/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o
+[10/25] Building CXX object CMakeFiles/semitone-native.dir/src/main/cpp/PianoEngine.cpp.o
+[11/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o
+[12/25] Building CXX object CMakeFiles/semitone-native.dir/src/main/cpp/Sound.cpp.o
+[13/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o
+[14/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/Trace.cpp.o
+[15/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o
+[16/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o
+[17/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o
+[18/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o
+[19/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o
+[20/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o
+[21/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o
+[22/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o
+[23/25] Building CXX object lib/oboe/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o
+[24/25] Linking CXX static library lib/oboe/liboboe.a
+[25/25] Linking CXX shared library ../../../../build/intermediates/cxx/Debug/5h403r6l/obj/armeabi-v7a/libsemitone-native.so

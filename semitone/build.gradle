@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
 }
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -94,6 +95,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+    
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 dependencies {
@@ -106,6 +111,10 @@ dependencies {
     
     // Material Design 3
     implementation 'com.google.android.material:material:1.11.0'
+    
+    // Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     
     // Testing
     testImplementation 'junit:junit:4.13.2'

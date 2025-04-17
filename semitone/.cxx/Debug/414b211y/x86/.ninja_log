@@ -1,0 +1,27 @@
+# ninja log v5
+9	950	1744917718173070229	lib/oboe/CMakeFiles/oboe.dir/src/common/LatencyTuner.cpp.o	d3d7675f156421db
+1115	1430	1744917718651798583	lib/oboe/CMakeFiles/oboe.dir/src/opensles/OutputMixerOpenSLES.cpp.o	1f9b9e4a1f236f27
+2	1029	1744917718252080312	CMakeFiles/semitone-native.dir/src/main/cpp/semitone-native.cpp.o	455a125eedde8108
+6	197	1744917717419119923	lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AAudioLoader.cpp.o	c31976735c9c003e
+3	1012	1744917718235926077	CMakeFiles/semitone-native.dir/src/main/cpp/Tone.cpp.o	a3f0046ddaecc28c
+604	823	1744917718047370490	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerIndirect.cpp.o	f351d927dfb428da
+538	604	1744917717823369920	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoControllerBase.cpp.o	9ebfdd5788751f6a
+1440	1487	1744917718713032000	lib/oboe/liboboe.a	56779c36baa1acda
+984	1421	1744917718641636081	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamOpenSLES.cpp.o	661666bbdfcd67a7
+0	7	0	clean	e342f0c8a890e56a
+1121	1426	1744917718648747612	lib/oboe/CMakeFiles/oboe.dir/src/common/StabilizedCallback.cpp.o	c00f24310db9ef81
+197	301	1744917717524499993	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoBuffer.cpp.o	f43500b21a4e9918
+12	982	1744917718206114160	lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStreamBuilder.cpp.o	59526552afab794c
+11	984	1744917718206435161	lib/oboe/CMakeFiles/oboe.dir/src/common/AudioStream.cpp.o	9f70a6f3fd5d891a
+4	1121	1744917718342040484	CMakeFiles/semitone-native.dir/src/main/cpp/Sound.cpp.o	accf0852ff3eec37
+1487	1597	1744917718797594947	../../../../build/intermediates/cxx/Debug/414b211y/obj/x86/libsemitone-native.so	67210447cb0f8e25
+823	1359	1744917718582660166	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioInputStreamOpenSLES.cpp.o	b065a3181fe4a957
+2	1115	1744917718338668261	CMakeFiles/semitone-native.dir/src/main/cpp/PianoEngine.cpp.o	bbabfaf5fc929360
+982	1435	1744917718656414977	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioStreamBuffered.cpp.o	ef51c9d801d30b09
+1285	1324	1744917718548759439	lib/oboe/CMakeFiles/oboe.dir/src/common/Trace.cpp.o	1e9f5f224a00e362
+1012	1416	1744917718637410439	lib/oboe/CMakeFiles/oboe.dir/src/opensles/EngineOpenSLES.cpp.o	810a1436ba7bfa75
+301	538	1744917717756208636	lib/oboe/CMakeFiles/oboe.dir/src/fifo/FifoController.cpp.o	3c642d9aa9f6730b
+950	1440	1744917718662923755	lib/oboe/CMakeFiles/oboe.dir/src/opensles/AudioOutputStreamOpenSLES.cpp.o	8165df3f0302aa9c
+6	1285	1744917718508304685	lib/oboe/CMakeFiles/oboe.dir/src/aaudio/AudioStreamAAudio.cpp.o	73f757e3fe510329
+1029	1416	1744917718638462443	lib/oboe/CMakeFiles/oboe.dir/src/opensles/OpenSLESUtilities.cpp.o	71f93d45d07f1278
+15	1370	1744917718593381378	lib/oboe/CMakeFiles/oboe.dir/src/common/Utilities.cpp.o	641f289071463029
