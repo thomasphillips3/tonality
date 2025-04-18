@@ -30,4 +30,20 @@
     <color name="yellowBlackScaleRoot">#D1A148</color>
     <color name="yellowIntervalWhiteLabel">#8b0000</color>
     <color name="yellowIntervalBlackLabel">#181818</color>
+
+    <!-- Octone theme colors -->
+    <color name="deep_black">#0A0A0A</color>
+    <color name="muted_chrome">#2A2A2A</color>
+    <color name="neon_teal">#00FFD1</color>
+    <color name="soft_violet">#B19CD9</color>
+    <color name="warm_amber">#FFB347</color>
+
+    <!-- UI element colors -->
+    <color name="primary">@color/neon_teal</color>
+    <color name="primary_dark">@color/deep_black</color>
+    <color name="accent">@color/warm_amber</color>
+    <color name="background">@color/deep_black</color>
+    <color name="surface">@color/muted_chrome</color>
+    <color name="text_primary">@color/white</color>
+    <color name="text_secondary">@color/soft_violet</color>
 </resources>

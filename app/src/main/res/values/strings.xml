@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tonality</string>
+    <string name="app_name">Octone</string>
     <string name="about_tonality_file">about-tonality.html</string>
     <string name="about_title">About %1$s</string>
     <string name="title_root_note">Select Root Note</string>

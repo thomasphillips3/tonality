@@ -1,6 +1,14 @@
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/semitone-native.dir
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/edit_cache.dir
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/list_install_components.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/install.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/install/local.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/CMakeFiles/install/strip.dir
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/oboe.dir
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/edit_cache.dir
 /Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/rebuild_cache.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/list_install_components.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/install.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/install/local.dir
+/Users/thomasphillips/workspace/android/tonality/semitone/.cxx/RelWithDebInfo/4f2r2b58/x86/lib/oboe/CMakeFiles/install/strip.dir
