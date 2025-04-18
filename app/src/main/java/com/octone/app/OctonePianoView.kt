@@ -1,4 +1,4 @@
-package net.thomasphillips.octone
+package com.octone.app
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,9 +9,11 @@ import android.graphics.Shader
 import android.graphics.Color
 import android.util.AttributeSet
 import android.view.View
+import android.view.MotionEvent
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import mn.tck.semitone.PianoView
+import mn.tck.semitone.PianoEngine
 import mn.tck.semitone.Util
 import kotlin.jvm.JvmName
 

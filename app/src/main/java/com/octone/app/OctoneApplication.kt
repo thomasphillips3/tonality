@@ -1,4 +1,4 @@
-package net.thomasphillips.octone
+package com.octone.app
 
 import android.app.Application
 import mn.tck.semitone.PianoEngine

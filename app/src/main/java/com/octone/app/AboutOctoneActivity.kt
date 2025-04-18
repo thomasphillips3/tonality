@@ -1,4 +1,4 @@
-package net.thomasphillips.octone
+package com.octone.app
 
 import android.os.Bundle
 import android.webkit.WebView

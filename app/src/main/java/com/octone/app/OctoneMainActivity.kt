@@ -1,4 +1,4 @@
-package net.thomasphillips.octone
+package com.octone.app
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
 import mn.tck.semitone.PianoEngine
-import net.thomasphillips.octone.databinding.ActivityOctoneMainBinding
+import com.octone.app.databinding.ActivityOctoneMainBinding
 
 class OctoneMainActivity : AppCompatActivity() {
     private var scaleController: PianoControlScale? = null

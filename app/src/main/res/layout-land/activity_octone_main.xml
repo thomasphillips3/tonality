@@ -8,7 +8,7 @@
 
         <variable
             name="pianoView"
-            type="net.thomasphillips.octone.OctonePianoView" />
+            type="com.octone.app.OctonePianoView" />
     </data>
 
     <LinearLayout
@@ -19,7 +19,7 @@
         tools:context=".OctoneMainActivity">
 
 
-        <net.thomasphillips.octone.OctonePianoView
+        <com.octone.app.OctonePianoView
             android:id="@+id/piano"
             android:layout_width="match_parent"
             android:layout_height="0dp"

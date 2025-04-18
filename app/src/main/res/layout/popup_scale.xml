@@ -11,11 +11,11 @@
 
         <variable
             name="piano"
-            type="net.thomasphillips.octone.OctonePianoView" />
+            type="com.octone.app.OctonePianoView" />
 
         <variable
             name="handler"
-            type="net.thomasphillips.octone.PianoControlScale" />
+            type="com.octone.app.PianoControlScale" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

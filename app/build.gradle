@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'net.thomasphillips.octone'
+    namespace 'com.octone.app'
     compileSdk 34
     
     defaultConfig {

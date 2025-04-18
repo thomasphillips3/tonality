@@ -1,4 +1,4 @@
-package net.thomasphillips.octone
+package com.octone.app
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
+import com.octone.app.databinding.FragmentPianoControlScaleBinding
 
 class PianoControlScale : Fragment() {
     private var piano: OctonePianoView? = null
