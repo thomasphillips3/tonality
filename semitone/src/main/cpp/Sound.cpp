@@ -131,7 +131,7 @@ Sound::Sound(AAssetManager &am, const char *path, int concert_a, int channels) {
 
         // Initialize channel layout if not set
         if (cc->ch_layout.nb_channels == 0) {
-            av_channel_layout_default(&cc->ch_layout, stream->codecpar->ch_layout.nb_channels);
+            av_channel_layout_default(&cc->ch_layout, stream->codecpar->channels);
         }
 
         ret = avcodec_open2(cc.get(), codec, nullptr);
