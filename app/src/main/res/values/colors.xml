@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Original theme colors -->
     <color name="colorPrimary">#377A23</color>
     <color name="colorPrimaryDark">#115B00</color>
     <color name="colorAccent">#8b0000</color>
@@ -12,8 +13,10 @@
     <color name="black_overlay">#66000000</color>
 
     <!-- colorful theme -->
-    <color name="whiteKey">#ffffff</color>
-    <color name="blackKey">#181818</color>
+    <color name="whiteKeyTop">#FFFFFF</color>
+    <color name="whiteKey">#F0F0F0</color>
+    <color name="blackKeyTop">#303030</color>
+    <color name="blackKey">#000000</color>
     <color name="whiteScale">#FFE488</color>
     <color name="blackScale">#8B6200</color>
     <color name="whiteScaleRoot">#D1A148</color>
@@ -46,4 +49,70 @@
     <color name="surface">@color/muted_chrome</color>
     <color name="text_primary">@color/white</color>
     <color name="text_secondary">@color/soft_violet</color>
+    <color name="error">#FFB00020</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="on_accent">#FF000000</color>
+    <color name="on_background">#FF000000</color>
+    <color name="on_surface">#FF000000</color>
+    <color name="on_error">#FFFFFFFF</color>
+    <color name="grey1">#FFE0E0E0</color>
+    <color name="grey3">#FFBDBDBD</color>
+    <color name="grey4">#FF9E9E9E</color>
+
+    <!-- Scale Color Palettes -->
+    <!-- Natural Major -->
+    <color name="major_scale_base">#A7C7E7</color>
+    <color name="major_scale_root">#FFD700</color>
+    <color name="major_scale_highlight">#B8860B</color>
+
+    <!-- Natural Minor -->
+    <color name="minor_scale_base">#9B8BA5</color>
+    <color name="minor_scale_root">#483D8B</color>
+    <color name="minor_scale_highlight">#2E1A47</color>
+
+    <!-- Harmonic Minor -->
+    <color name="harmonic_minor_base">#CD5C5C</color>
+    <color name="harmonic_minor_root">#B87333</color>
+    <color name="harmonic_minor_highlight">#8B4513</color>
+
+    <!-- Melodic Minor -->
+    <color name="melodic_minor_base">#40E0D0</color>
+    <color name="melodic_minor_root">#FF1493</color>
+    <color name="melodic_minor_highlight">#8B008B</color>
+
+    <!-- Pentatonic Major -->
+    <color name="pent_major_base">#FFA07A</color>
+    <color name="pent_major_root">#FF69B4</color>
+    <color name="pent_major_highlight">#FF4500</color>
+
+    <!-- Pentatonic Minor -->
+    <color name="pent_minor_base">#8FBC8F</color>
+    <color name="pent_minor_root">#556B2F</color>
+    <color name="pent_minor_highlight">#8B4513</color>
+
+    <!-- Greek Modes -->
+    <color name="ionian_base">#87CEEB</color>
+    <color name="ionian_root">#4682B4</color>
+
+    <color name="dorian_base">#9CAF88</color>
+    <color name="dorian_root">#6B8E23</color>
+
+    <color name="phrygian_base">#CD5C5C</color>
+    <color name="phrygian_root">#8B0000</color>
+
+    <color name="lydian_base">#00CED1</color>
+    <color name="lydian_root">#008B8B</color>
+
+    <color name="mixolydian_base">#4169E1</color>
+    <color name="mixolydian_root">#191970</color>
+
+    <color name="aeolian_base">#DDA0DD</color>
+    <color name="aeolian_root">#C71585</color>
+
+    <color name="locrian_base">#9370DB</color>
+    <color name="locrian_root">#4B0082</color>
+
+    <!-- Key Effects -->
+    <color name="key_shadow">#33000000</color>
+    <color name="key_highlight">#26FFFFFF</color>
 </resources>
