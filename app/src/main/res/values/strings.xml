@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Octone</string>
     <string name="about_tonality_file">about-tonality.html</string>
@@ -31,4 +32,12 @@
     <string name="scale_mixolydian">Greek: Myxolydian</string>
     <string name="scale_aeolian">Greek: Aeolian</string>
     <string name="scale_locrian">Greek: Locrian</string>
+
+    <!-- Menu strings -->
+    <string name="menu_about">About</string>
+    <string name="menu_switch_labelnotes">Show Note Labels</string>
+    <string name="menu_switch_labelc">Show C Notes Only</string>
+    <string name="menu_switch_labelintervals">Show Intervals</string>
+    <string name="menu_switch_rows_top_down">Rows Top Down</string>
+    <string name="menu_switch_circleoffifths">Circle of Fifths</string>
 </resources>

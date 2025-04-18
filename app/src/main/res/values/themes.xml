@@ -22,8 +22,5 @@
         <!-- Text colors -->
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
-        
-        <!-- Custom attributes -->
-        <item name="android:fontFamily">@font/inter</item>
     </style>
 </resources> 

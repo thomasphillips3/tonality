@@ -2,25 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
 
-    <Button
-        android:id="@+id/button_root_note"
-        android:layout_width="64dip"
-        android:padding="1dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="D♯/E♭"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/button_scale"
+    <Spinner
+        android:id="@+id/spinner_scale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Pentatonic Major"
-        android:textAllCaps="false"
-        android:textColor="@color/white" />
+        android:minWidth="120dp"
+        android:layout_marginEnd="8dp" />
+
+    <Spinner
+        android:id="@+id/spinner_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="80dp" />
 
 </LinearLayout>

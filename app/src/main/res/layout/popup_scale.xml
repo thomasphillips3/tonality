@@ -11,11 +11,11 @@
 
         <variable
             name="piano"
-            type="net.currit.tonality.TonalityPianoView" />
+            type="net.thomasphillips.octone.OctonePianoView" />
 
         <variable
             name="handler"
-            type="net.currit.tonality.PianoControlScale" />
+            type="net.thomasphillips.octone.PianoControlScale" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,8 +47,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title" />
-
-
 
         <Button
             android:id="@+id/button_ok"
@@ -87,7 +85,6 @@
             app:layout_constraintCircleRadius="@dimen/circle_5th_outer"
             tools:ignore="MissingConstraints" />
 
-
         <TextView
             android:id="@+id/note_maj_d"
             style="@style/circle_note"
@@ -112,7 +109,6 @@
             app:layout_constraintCircleRadius="@dimen/circle_5th_outer"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints" />
-
 
         <TextView
             android:id="@+id/note_maj_e"

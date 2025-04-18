@@ -8,7 +8,7 @@ android {
     compileSdk 34
     
     defaultConfig {
-        applicationId "net.thomasphillips.octone"
+        applicationId "com.octone.app"
         minSdk 21
         targetSdk 34
         versionCode 3
