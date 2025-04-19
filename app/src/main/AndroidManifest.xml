@@ -7,29 +7,28 @@
         tools:node="remove" />
 
     <application
-        android:name=".TonalityApplication"
+        android:name=".OctoneApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.Octone"
         tools:ignore="GoogleAppIndexingWarning"
-        tools:node="replace">
-        <activity 
-            android:name=".AboutTonalityActivity"
-            android:exported="false" />
+        tools:replace="android:theme">
         <activity
-            android:name=".TonalityMainActivity"
+            android:name=".OctoneMainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AboutOctoneActivity"
+            android:label="@string/about_title"
+            android:parentActivityName=".OctoneMainActivity" />
     </application>
 
 </manifest>

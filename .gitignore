@@ -7,3 +7,8 @@
 .externalNativeBuild
 /.idea
 build
+semitone/.cxx/
+semitone/lib/ffmpeg
+semitone/.cxx/**/CMakeFiles/
+semitone/.cxx/**/lib/
+semitone/lib/ffmpeg/**
