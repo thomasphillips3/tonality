@@ -39,9 +39,22 @@
 -keepclassmembers class androidx.** { *; }
 
 # Keep your application classes
--keep class net.currit.tonality.** { *; }
--keepclassmembers class net.currit.tonality.** { *; }
+-keep class net.thomasphillips.octone.** { *; }
+-keepclassmembers class net.thomasphillips.octone.** { *; }
 
 # Keep the semitone module classes
 -keep class mn.tck.semitone.** { *; }
 -keepclassmembers class mn.tck.semitone.** { *; }
+
+# Keep the application class
+-keep class net.thomasphillips.octone.OctoneApplication { *; }
+
+# Keep all activities
+-keep class net.thomasphillips.octone.OctoneMainActivity { *; }
+-keep class net.thomasphillips.octone.AboutOctoneActivity { *; }
+
+# Keep all fragments
+-keep class net.thomasphillips.octone.PianoControlScale { *; }
+
+# Keep all custom views
+-keep class net.thomasphillips.octone.OctonePianoView { *; }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/menu_switch_labelnotes"
+            android:checkable="true"
+            android:title="@string/piano_labelnotes" />
+        <item
+            android:id="@+id/menu_switch_labelc"
+            android:checkable="true"
+            android:title="@string/piano_labelc" />
+        <item
+            android:id="@+id/menu_switch_labelintervals"
+            android:checkable="true"
+            android:title="@string/piano_labelintervals" />
+        <item
+            android:id="@+id/menu_switch_rows_top_down"
+            android:checkable="true"
+            android:title="@string/piano_row_direction" />
+        <item
+            android:id="@+id/menu_switch_circleoffifths"
+            android:checkable="true"
+            android:title="@string/piano_circleoffifths" />
+    </group>
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/menu_about"
+            android:title="@string/about_title" />
+    </group>
+</menu> 

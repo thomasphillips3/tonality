@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'net.currit.tonality'
+    namespace 'com.octone.app'
     compileSdk 34
     
     defaultConfig {
-        applicationId "net.currit.tonality"
+        applicationId "com.octone.app"
         minSdk 21
         targetSdk 34
         versionCode 3
